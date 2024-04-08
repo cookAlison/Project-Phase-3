@@ -1,0 +1,42 @@
+/*
+    Purpose:    provide simple cohesive style to the natural burial booking form
+                to make it readable for the group.
+
+    Authors:  Alex
+              Alison (Group Leader)
+              Charis
+              Natalie Falldien
+*/
+
+@layer utilities {
+  .content-auto {
+    /* optomizes page rendering by avoiding unnecessary rendering of content 
+         the user does not immediately need */
+    content-visibility: auto;
+  }
+}
+
+
+/********** HTML tag styles **********/
+
+
+input[type="text"], input[type="number"], textarea {
+  max-width: 1024px; /* This will ensure the inputs do not extend beyond the parent div */
+  box-sizing: border-box;
+}
+
+
+/* Add a background image! */
+body {
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/********** Class tag styles **********/
+
+/* No class styles */
+
+/********** ID tag styles **********/
+
+/* No ID styles */

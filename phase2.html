@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+
+<!--
+    Purpose:    Create the structure of the natural burial booking form.
+                The form has:
+                - a static header
+                - a section where personal information is entered
+                - a section where the marker is chosen
+                - a footer 
+
+    Authors:    Alex Nguyen
+                Alison Cook (Group leader)
+                Charis Gervase
+                Natalie Falldien
+
+    ugdev account:  username: mapp17
+                    password: journeyEXPERIEMENT90
+                    file location: TODO: (phase III requires this)
+-->
+
+<html>
+
+<head>
+
+  <title>Natural Burial Plot Booking</title>
+
+  <meta charset="UTF-8">
+
+  <meta name="keywords" content="example 2">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- This tag relates the CSS phase1.css to this HTML file -->
+  <link rel="stylesheet" href="./styles/phase2.css">
+
+  <!-- Include Google font "Space Mono" -->
+  <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
+
+  <!-- Make Bootstrap icons available to this file for the speaker icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- Adds Tailwind Play CDN script to use the styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Include Tailwind CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Links to cursor CSS and JS files (Charis)-->
+  <link rel="stylesheet" href="./styles/cursor.css">
+  <script src="./scripts/cursor.js"></script>
+
+  <!-- Include JQuery -->
+  <script src="./styles/jquery-3.7.1.js"></script>
+
+  <!-- Audio Links (Natalie) -->
+  <audio id="contactInfo" src="./audios/Line 1.mp3"></audio>
+  <audio id="firstAndLastName" src="./audios/Line 2.mp3"></audio>
+  <audio id="emaileEnter" src="./audios/Line 3.mp3"></audio>
+  <audio id="phoneNumberEnter" src="./audios/Line 4.mp3"></audio>
+  <audio id="streetAddress" src="./audios/Line 5.mp3"></audio>
+  <audio id="streetAddressTwo" src="./audios/Line 6.mp3"></audio>
+  <audio id="countyResidence" src="./audios/Line 7.mp3"></audio>
+  <audio id="cityResidence" src="./audios/Line 8.mp3"></audio>
+  <audio id="provinceResidence" src="./audios/Line 9.mp3"></audio>
+  <audio id="postalCode" src="./audios/Line 10.mp3"></audio>
+  <audio id="chooseLocation" src="./audios/Line 11.mp3"></audio>
+  <audio id="chooseContainer" src="./audios/Line 12.mp3"></audio>
+  <audio id="stoneMarkerAudio" src="./audios/Line 13.mp3"></audio>
+  <audio id="stoneMarkerExplination" src="./audios/Line 14.mp3"></audio>
+  <audio id="nameStoneEngravement" src="./audios/Line 15.mp3"></audio>
+  <audio id="firstStoneName" src="./audios/Line 16.mp3"></audio>
+  <audio id="middleStoneName" src="./audios/Line 17.mp3"></audio>
+  <audio id="lastStoneName" src="./audios/Line 18.mp3"></audio>
+  <audio id="dateOfBirthStone" src="./audios/Line 19.mp3"></audio>
+  <audio id="monthOfDeathStone" src="./audios/Line 20.mp3"></audio>
+  <audio id="dayOfDeathStone" src="./audios/Line 21.mp3"></audio>
+  <audio id="yearOfDeathStone" src="./audios/Line 22.mp3"></audio>
+  <audio id="stoneEpitaph" src="./audios/Line 23.mp3"></audio>
+  <audio id="stoneImage" src="./audios/Line 24.mp3"></audio>
+  <audio id="stoneYesOrNo" src="./audios/Line 25.mp3"></audio>
+  <audio id="selectStoneType" src="./audios/Line 27.mp3"></audio>
+  <audio id="stoneType" src="./audios/Line 28.mp3"></audio>
+  <audio id="woodenMarker" src="./audios/Line 29.mp3"></audio>
+  <audio id="woodenMarkerExplination" src="./audios/Line 30.mp3"></audio>
+  <audio id="woodenName" src="./audios/Line 31.mp3"></audio>
+  <audio id="woodenFirstName" src="./audios/Line 32.mp3"></audio>
+  <audio id="woodenMiddleName" src="./audios/Line 33.mp3"></audio>
+  <audio id="woodenLastName" src="./audios/Line 34.mp3"></audio>
+  <audio id="woodenDateOfDeath" src="./audios/Line 35.mp3"></audio>
+  <audio id="woodenMonthOfDeath" src="./audios/Line 36.mp3"></audio>
+  <audio id="woodenDayOfDeath" src="./audios/Line 37.mp3"></audio>
+  <audio id="woodenYeatOfDeath" src="./audios/Line 38.mp3"></audio>
+  <audio id="woodenEpithaph" src="./audios/Line 39.mp3"></audio>
+  <audio id="woodenImages" src="./audios/Line 40.mp3"></audio>
+  <audio id="woodenYesOrNo" src="./audios/Line 41.mp3"></audio>
+  <audio id="woodSelection" src="./audios/Line 42.mp3"></audio>
+  <audio id="woodSelectionTypes" src="./audios/Line 43.mp3"></audio>
+  <audio id="woodSection" src="./audios/Line 44.mp3"></audio>
+  <audio id="woodSectionSelection" src="./audios/Line 45.mp3"></audio>
+  <audio id="plantMarker" src="./audios/Line 46.mp3"></audio>
+  <audio id="plantMarkerExplination" src="./audios/Line 47.mp3"></audio>
+  <audio id="plantMarkerType" src="./audios/Line 48.mp3"></audio>
+  <audio id="plantMarkerTypeChoices" src="./audios/Line 49.mp3"></audio>
+  <audio id="plantMarkerTree" src="./audios/Line 50.mp3"></audio>
+  <audio id="plantMarkerTreeType" src="./audios/Line 51.mp3"></audio>
+  <audio id="plantMarkerBushType" src="./audios/Line 52.mp3"></audio>
+  <audio id="plantMarkerBushTypeChoice" src="./audios/Line 53.mp3"></audio>
+  <audio id="selectAMarker" src="./audios/Line 54.mp3"></audio>
+  <audio id="stoneDateOfBrith" src="./audios/Line 55.mp3"></audio>
+  <audio id="monthOfBrith" src="./audios/Line 56.mp3"></audio>
+  <audio id="dayOfBrith" src="./audios/Line 57.mp3"></audio>
+  <audio id="yearOfBrith" src="./audios/Line 58.mp3"></audio>
+  <audio id="woodDateOfBirth" src="./audios/Line 59.mp3"></audio>
+  <audio id="wildFlowerSelection" src="./audios/Line 60.mp3"></audio>
+  <audio id="wildFlowerSelectionType" src="./audios/Line 61.mp3"></audio>
+  <audio id="endOfForm" src="./audios/Line 62.mp3"></audio>
+  <audio id="enterrementOptions" src="./audios/Line 63.mp3"></audio>
+
+
+  <!-- Add in audio function -->
+  <script src="./scripts/audio.js"></script>
+
+  <!-- Bring in JavaScript to use the form functionalities -->
+  <script src="./scripts/functionality.js"></script>
+
+  <!-- Check user's input -->
+  <script src="./scripts/check.js"></script>
+
+  <!-- Store & retrieve user data (submit button and on reload) -->
+  <script src="./scripts/store.js"></script>
+  <script src="./scripts/retrieve.js"></script>
+
+</head>
+
+<body style="background-image: url('images/DarkLeavesBackground.jpg');">
+  <!-- Cursor highlight (Charis) -->
+  <div id="follow">
+    <img src="./images/bar.jpg" />
+  </div>
+
+  <!-- Header (Charis)-->
+  <div>
+    <h3 class="text-white text-9xl py-2 text-center pb-5">Natural Burial Plot Booking</h3>
+  </div>
+
+  <!--- Personal Information (Alex) --->
+  <div class="p-4">
+    <div class="bg-white flex flex-col m-auto w-full border-4 border-black p-4 
+                rounded justify-around text-9xl">
+      <div class="flex flex-row p-4 border-4 border-black rounded">
+        <!-----------------------------------Line 1---------------------------------------------------------------->
+        <button onclick="toggleAudio('contactInfo', 'Line 1.mp3')"
+          class="flex flex-none bg-blue-500 hover:bg-blue-700 text-white 
+                font-bold p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="flex p-2 text-9xl pl-7 justify-center m-auto">Contact Information</div>
+      </div>
+      <div class="flex flex-wrap text-9xl">
+        <div class="w-full">
+          <!-- First Name & Last Name -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 2---------------------------------------------------------------->
+            <button onclick="toggleAudio('firstAndLastName', 'Line 2.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputName" class="mb-2">First and Last name:</label>
+              <input type="text" id="userInputName" class="w-10/12 text-black 
+                      border border-4 border-black rounded-md"
+                placeholder="Type here" style="overflow-wrap: break-word;">
+              <span id="nameError" class="text-red-500"></span> <!-- Error message for name -->
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 3---------------------------------------------------------------->
+            <button onclick="toggleAudio('emaileEnter', 'Line 3.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputEmail" class="mb-2">Email:</label>
+              <input type="text" id="userInputEmail" class="w-10/12 text-black 
+                      border border-4 border-black rounded-md"
+                placeholder="Type here" style="overflow-wrap: break-word;">
+              <span id="emailError" class="text-red-500"></span> <!-- Error message for email -->
+            </div>
+          </div>
+          <!-- Phone Number -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 4---------------------------------------------------------------->
+            <button onclick="toggleAudio('phoneNumberEnter', 'Line 4.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputPhone" class="mb-2">Phone Number:</label>
+              <input type="text" id="userInputPhone" class="w-10/12 text-black 
+                      border border-4 border-black rounded-md"
+                placeholder="Type here" style="overflow-wrap: break-word;">
+              <span id="phoneError" class="text-red-500"></span> <!-- Error message for phone number -->
+            </div>
+          </div>
+          <!-- Street Address -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 5---------------------------------------------------------------->
+            <button onclick="toggleAudio('streetAddress', 'Line 5.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                      font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputStreet" class="mb-2">Street Address:</label>
+              <input type="text" id="userInputStreet" class="w-10/12 text-black 
+                    border border-4 border-black rounded-md"
+                placeholder="Type here" style="overflow-wrap: break-word;">
+              <span id="streetError" class="text-red-500"></span> <!-- Error message for street address -->
+            </div>
+          </div>
+          <!-- Address Line 2 -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 6---------------------------------------------------------------->
+            <button onclick="toggleAudio('streetAddressTwo', 'Line 6.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputAddress2" class="mb-2">Address Line 2:</label>
+              <input type="text" id="userInputAddress2"
+                class="w-10/12 text-black border border-4 border-black rounded-md" placeholder="Type here"
+                style="overflow-wrap: break-word;">
+              <span id="address2Error" class="text-red-500"></span> <!-- Error message for address line 2 -->
+            </div>
+          </div>
+          <!-- Country of Residence -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 7---------------------------------------------------------------->
+            <button onclick="toggleAudio('countyResidence', 'Line 7.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                      font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputCountry" class="mb-2">Country of Residence:</label>
+              <input type="text" id="userInputCountry"
+                class="w-10/12 text-black border border-4 border-black rounded-md" 
+                placeholder="Type here"
+                style="overflow-wrap: break-word;">
+              <span id="countryError" class="text-red-500"></span> <!-- Error message for country -->
+            </div>
+          </div>
+          <!-- City -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 8---------------------------------------------------------------->
+            <button onclick="toggleAudio('cityResidence', 'Line 8.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputCity" class="mb-2">City:</label>
+              <input type="text" id="userInputCity" class="w-10/12 text-black 
+                      border border-4 border-black rounded-md"
+                placeholder="Type here" style="overflow-wrap: break-word;">
+              <span id="cityError" class="text-red-500"></span> <!-- Error message for city -->
+            </div>
+          </div>
+          <!-- Province -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 9---------------------------------------------------------------->
+            <button onclick="toggleAudio('provinceResidence', 'Line 9.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputProvince" class="mb-2">Province:</label>
+              <input type="text" id="userInputProvince"
+                class="w-10/12 text-black border border-4 border-black rounded-md" 
+                placeholder="Type here"
+                style="overflow-wrap: break-word;">
+              <span id="provinceError" class="text-red-500"></span> <!-- Error message for province -->
+            </div>
+          </div>
+          <!-- Postal Code -->
+          <div class="flex items-start p-4">
+            <!-----------------------------------Line 10---------------------------------------------------------------->
+            <button onclick="toggleAudio('postalCode', 'Line 10.mp3')"
+              class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-col pl-8 w-full">
+              <label for="userInputPostalCode" class="mb-2">Postal Code:</label>
+              <input type="text" id="userInputPostalCode"
+                class="w-10/12 text-black border border-4 border-black rounded-md" 
+                placeholder="Type here"
+                style="overflow-wrap: break-word;">
+              <span id="postalCodeError" class="text-red-500"></span> <!-- Error message for postal code -->
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap text-9xl">
+          <div class="w-full">
+
+            <div class="p-4"></div>
+            <div class="flex flex-row p-4 py-8 border-4 border-black rounded">
+              <!-----------------------------------Line 63---------------------------------------------------------------->
+              <button onclick="toggleAudio('enterrementOptions', 'Line 63.mp3')"
+                class="flex flex-none bg-blue-500 hover:bg-blue-700 text-white font-bold 
+                      p-5 rounded size-50 justify-left self-start">
+                <i class="bi bi-volume-up"></i>
+              </button>
+              <!---------------------------------------------------------------------------------------------------------->
+              <div class="flex p-2 text-9xl pl-7 justify-center m-auto">
+                Enterrement Options
+              </div>
+            </div>
+            <div class="p-4"></div>
+
+            <!-- Location Options -->
+            <div class="w-full">
+              <div class="flex items-start p-4">
+                <!-----------------------------------Line 11---------------------------------------------------------------->
+                <button onclick="toggleAudio('chooseLocation', 'Line 11.mp3')"
+                  class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                        font-bold p-5 rounded size-50 justify-left self-start">
+                  <i class="bi bi-volume-up"></i>
+                </button>
+                <!---------------------------------------------------------------------------------------------------------->
+                <div class="flex flex-col pl-8 w-full">
+                  <label class="mb-2">Choose Location:</label>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex flex-wrap">
+              <!-- Wood -->
+              <div class="w-3/5 flex items-center space-x-20 m-auto mb-5">
+                <div class="inline-flex items-center">
+                  <input type="radio" id="wood" name="location" value="woods"
+                    class="appearance-none border border-8 border-black rounded-md 
+                          checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                  <label for="wood" class="ml-2 text-gray-700">Woods</label>
+                </div>
+              </div>
+              <!-- Field -->
+              <div class="w-3/5 flex items-center space-x-20 m-auto mb-5">
+                <div class="inline-flex items-center">
+                  <input type="radio" id="field" name="location" value="field"
+                    class="appearance-none border border-8 border-black rounded-md 
+                          checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                  <label for="field" class="ml-2 text-gray-700">Field</label>
+                </div>
+              </div>
+              <!-- Waterside -->
+              <div class="w-3/5 flex items-center space-x-20 m-auto mb-5">
+                <div class="inline-flex items-center">
+                  <input type="radio" id="waterside" name="location" value="waterside"
+                    class="appearance-none border border-8 border-black rounded-md 
+                          checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                  <label for="waterside" class="ml-2 text-gray-700">Waterside</label>
+                </div>
+              </div>
+            </div>
+
+            <!--Container Options-->
+            <div class="w-full">
+              <div class="flex items-start p-4">
+                <!-----------------------------------Line 12---------------------------------------------------------------->
+                <button onclick="toggleAudio('chooseContainer', 'Line 12.mp3')"
+                  class="flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                        font-bold p-5 rounded size-50 justify-left self-start">
+                  <i class="bi bi-volume-up"></i>
+                </button>
+                <!---------------------------------------------------------------------------------------------------------->
+                <div class="flex flex-col pl-8 w-full">
+                  <label class="mb-2">Choose Container:</label>
+                </div>
+              </div>
+            </div>
+            <div class="w-3/5 flex items-center m-auto mb-5">
+              <!-- Biodegradable Box -->
+              <div class="inline-flex items-center">
+                <input type="radio" id="biodegradable-box" name="container" 
+                  value="biodegradable-box"
+                  class="appearance-none border border-8 border-black rounded-md 
+                  checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+              </div>
+              <div class="mt-2 ml-2">
+                <label for="biodegradable-box" class="text-gray-700 text-9xl">Biodegradable Box</label>
+              </div>
+            </div>
+            <div class="w-3/5 flex items-center space-x-20 m-auto mb-20">
+              <!-- Shroud -->
+              <div class="inline-flex items-center">
+                <input type="radio" id="shroud" name="container" value="shroud"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label for="shroud" class="ml-2 text-gray-700 text-9xl">Shroud</label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--- End of Info Form --->
+
+
+  <!-- Selection Form (Ali) -->
+
+  <!-- Select a marker section header-->
+  <div class="p-4">
+    <div class="flex flex-col p-4 text-9xl bg-zinc-100 border-4 border-black p-4 rounded">
+      <div class="flex flex-row p-4">
+
+        <!-----------------------------------Line 54---------------------------------------------------------------->
+        <button onclick="toggleAudio('selectAMarker', 'Line 54.mp3')"
+          class="flex flex-none bg-blue-500 hover:bg-blue-700 text-white font-bold 
+                p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex p-2 text-9xl">Select a Marker</div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- This div contains the card and form for the Stone Marker -->
+  <div class="p-4">
+
+    <!-- This div contains the Stone Marker option -->
+    <div id="stoneMarkerFormCard"
+      class="bg-zinc-100 flex flex-col border-4 border-black p-4 rounded text-9xl backgroundImage">
+
+      <!-- Title row -->
+      <div class="flex flex-row text-9xl p-4">
+        <!-----------------------------------Line 13---------------------------------------------------------------->
+        <button onclick="toggleAudio('stoneMarkerAudio', 'Line 13.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                font-bold p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+
+        <div class="flex p-2">Stone Marker</div>
+
+      </div>
+
+      <!-- Description row-->
+      <div class="flex p-4 text-9xl justify-left items-center">
+
+        <!-----------------------------------Line 14---------------------------------------------------------------->
+        <button onclick="toggleAudio('stoneMarkerExplination', 'Line 14.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                p-5 rounded size-50 justify-left">
+          About
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex justify-center items-center flex-grow">
+          <img src="images/stone-marker.jpg" class="border-4 border-black rounded" 
+                alt="" width="480px" height="auto">
+        </div>
+
+      </div>
+
+      <!-- Selection button (bottom row) -->
+      <button id="stoneMarkerFormButton" data-default-text="Select Stone Marker"
+        data-selected-text="Stone Marker Selected" type="button" 
+        class="flex bg-blue-500 hover:bg-blue-700 text-white rounded p-2 justify-center text-9xl" 
+        onclick="toggleForm('stoneMarkerForm')">
+        Select Stone Marker
+      </button>
+    </div>
+
+    <br>
+
+    <!--  This div contains the form associated with the Stone Marker Option
+          This appears upon selection only -->
+    <div id="stoneMarkerForm" class="bg-zinc-100 hidden flex border border-black 
+            border-4 text-9xl p-4 overflow-hidden">
+
+      <div class="flex flex-col flex-none text-pretty">
+
+        <!-- Name input -->
+        <div>
+
+          <div class="flex flex-row flex-none" width="1366px">
+            <!-----------------------------------Line 15---------------------------------------------------------------->
+            <button onclick="toggleAudio('nameStoneEngravement', 'Line 15.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <label class="flex flex-none py-4" for="nameEngraving">
+              Name:
+            </label>
+          </div>
+
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 16---------------------------------------------------------------->
+            <button onclick="toggleAudio('firstStoneName', 'Line 16.mp3')"
+              class="mr-2 flex flex-none bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="text" for="stoneFirstName" placeholder="First" cols="16"
+              class="flex flex-none border border-black border-2 p-2" id="firstName" />
+            <div class="flex py-1"></div>
+          </div>
+
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 17---------------------------------------------------------------->
+            <button onclick="toggleAudio('middleStoneName', 'Line 17.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="text" for="stoneMiddleName" placeholder="Middle" 
+              class="flex border border-black border-2 p-2"
+              id="middleName" />
+            <div class="flex py-1"></div>
+          </div>
+
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 18---------------------------------------------------------------->
+            <button onclick="toggleAudio('lastStoneName', 'Line 18.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="text" for="stoneLastName" placeholder="Last" 
+              class="flex border border-black border-2 p-2"
+              id="lastName" />
+            <div class="flex py-1"></div>
+          </div>
+
+        </div>
+
+        <!-- DOB input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 55---------------------------------------------------------------->
+            <button onclick="toggleAudio('stoneDateOfBrith', 'Line 55.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <label class="flex flex-none py-4" for="dateOfBirth">
+              Date of Birth:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+
+            <!-----------------------------------Line 56---------------------------------------------------------------->
+            <button onclick="toggleAudio('monthOfBrith', 'Line 56.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="text" placeholder="Month" id="birthMonth" 
+              class="flex border border-black border-2 p-2"
+              pattern="/^(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/i" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 57---------------------------------------------------------------->
+            <button onclick="toggleAudio('dayOfBrith', 'Line 57.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="number" placeholder="Day" min="1" max="31" id="birthDay"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 58---------------------------------------------------------------->
+            <button onclick="toggleAudio('yearOfBrith', 'Line 58.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <input type="number" placeholder="Year" id="birthYear" 
+                    class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+        </div>
+
+        <!-- DOD input, optional -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <div class="flex flex-none pr-2">
+
+              <!-----------------------------------Line 19---------------------------------------------------------------->
+              <button onclick="toggleAudio('dateOfBirthStone', 'Line 19.mp3')"
+                class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                      font-bold p-5 rounded size-50 justify-left self-start">
+                <i class="bi bi-volume-up"></i>
+              </button>
+              <!---------------------------------------------------------------------------------------------------------->
+            </div>
+
+            <label class="flex flex-none py-4" for="dateOfDeath">
+              Date of Death:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+
+            <!-----------------------------------Line 20--------------------------------------------------------------->
+            <button onclick="toggleAudio('monthOfDeathStone', 'Line 20.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+              font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <input type="text" placeholder="Month" id="deathMonth" 
+              class="flex border border-black border-2 p-2"
+              pattern="/^(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/i" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 21---------------------------------------------------------------->
+            <button onclick="toggleAudio('dayOfDeathStone', 'Line 21.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Day" min="1" max="31" id="deathDay"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 22---------------------------------------------------------------->
+            <button onclick="toggleAudio('yearOfDeathStone', 'Line 22.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Year" id="deathYear" 
+                    class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+        </div>
+
+        <!-- Additional text input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 23---------------------------------------------------------------->
+            <button onclick="toggleAudio('stoneEpitaph', 'Line 23.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <label for="epitaph" class="flex flex-none py-6">
+              Epitaph:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none">
+
+            <textarea id="epitaph" name="epitaph" for="epitaph" rows="4" cols="20" 
+              placeholder="Type the epitaph here."
+              class="flex border border-black border-2 p-2">
+            </textarea>
+
+          </div>
+        </div>
+
+        <!-- Images input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 24---------------------------------------------------------------->
+            <button onclick="toggleAudio('stoneImage', 'Line 24.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <label class="flex flex-none py-4">
+              Engraved Images:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none pt-2">
+            <!-----------------------------------Line 25---------------------------------------------------------------->
+            <button onclick="toggleAudio('stoneYesOrNo', 'Line 25.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col py-2 px-2">
+              <div class="flex flex-row items-center">
+                <input type="radio" name="engraveImageOption" id="engraveImageOptionYes" value="Yes"
+                  class="mt-2 appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label for="engraveImageOptionYes" class="flex px-2">Yes</label>
+              </div>
+              <div class="flex flex-row items-center">
+                <input type="radio" name="engraveImageOption" id="engraveImageOptionNo" value="No"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label for="engraveImageOptionNo" class="flex px-2">No</label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Type of stone selection -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 27---------------------------------------------------------------->
+            <button onclick="toggleAudio('selectStoneType', 'Line 27.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <label class="flex flex-none py-4">
+              Type of Stone:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 28---------------------------------------------------------------->
+            <button onclick="toggleAudio('stoneType', 'Line 28.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="stoneOption" value="Granite"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Granite</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="stoneOption" value="LimeStone"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Limestone</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="stoneOption" value="Shale"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Shale</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="stoneOption" value="Sandstone"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Sandstone</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- This div contains the card and form for the Wooden Marker -->
+  <div class="p-4">
+
+    <!-- This div contains the Wooden Marker option -->
+    <div id="woodenMarkerFormCard" class="bg-zinc-100 flex flex-col border-4 
+            border-black p-4 rounded text-9xl">
+
+      <!-- Title row -->
+      <div class="flex flex-row p-4 text-9xl">
+
+        <!-----------------------------------Line 29---------------------------------------------------------------->
+        <button onclick="toggleAudio('woodenMarker', 'Line 29.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                font-bold p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex p-2 text-9xl">Wooden Marker</div>
+
+      </div>
+
+      <!-- Description row-->
+      <div class="flex p-4 txt-9xl justify-left items-center">
+
+        <!-----------------------------------Line 30---------------------------------------------------------------->
+        <button onclick="toggleAudio('woodenMarkerExplination', 'Line 30.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                p-5 rounded size-50 justify-left">
+          About
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex justify-center items-center flex-grow">
+          <img src="images/wood-marker.jpg" class="border-4 border-black rounded" 
+          alt="" width="480px" height="auto">
+        </div>
+
+      </div>
+
+      <!-- Selection button (bottom row) -->
+      <button type="button" id="woodenMarkerFormButton" data-default-text="Select Wooden Marker"
+        data-selected-text="Wooden Marker Selected" class="flex bg-blue-500 
+          hover:bg-blue-700 text-white rounded p-2 justify-center" display="none"
+        onclick="toggleForm('woodenMarkerForm')">
+        Select Wooden Marker
+      </button>
+    </div>
+
+    <br>
+
+    <!--  This div contains the form associated with the wooden marker option.
+          This appears upon selection only -->
+    <div id="woodenMarkerForm"
+      class="bg-zinc-100 hidden flex border border-black border-4 text-9xl p-4 overflow-hidden">
+
+      <div class="flex flex-col flex-none text-pretty">
+
+        <!-- Name input -->
+        <div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 31---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenName', 'Line 31.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <label class="flex flex-none py-4" for="nameEngraving">
+              Name:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 32---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenFirstName', 'Line 32.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="text" for="woodenFirstName" placeholder="First" id="firstName"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 33---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenMiddleName', 'Line 33.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="text" for="woodenMiddleName" placeholder="Middle" id="middleName"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 34---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenLastName', 'Line 34.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="text" for="woodenLastName" placeholder="Last" id="lastName"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+
+        </div>
+
+        <!-- DOB input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 59---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodDateOfBirth', 'Line 59.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <label class="flex flex-none py-4" for="dateOfBirth">
+              Date of Birth:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 56---------------------------------------------------------------->
+            <button onclick="toggleAudio('monthOfBrith', 'Line 56.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="text" placeholder="Month" id="birthMonth" 
+              class="flex border border-black border-2 p-2"
+              pattern="/^(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/i" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 57---------------------------------------------------------------->
+            <button onclick="toggleAudio('dayOfBrith', 'Line 57.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Day" min="1" max="31" id="birthDay"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 58---------------------------------------------------------------->
+            <button onclick="toggleAudio('yearOfBrith', 'Line 58.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Year" id="birthYear" 
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+        </div>
+
+        <!-- DOD input, optional -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 35---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenDateOfDeath', 'Line 35.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <label class="flex flex-none py-4" for="dateOfDeath">
+              Date of Death:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 36---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenMonthOfDeath', 'Line 36.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="text" placeholder="Month" id="deathMonth" 
+              class="flex border border-black border-2 p-2"
+              pattern="/^(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$/i" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 37---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenDayOfDeath', 'Line 37.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Day" min="1" max="31" id="deathDay"
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+          <div class="flex flex-row flex-none py-2">
+            <!-----------------------------------Line 38---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenYeatOfDeath', 'Line 38.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <input type="number" placeholder="Year" id="deathYear" 
+              class="flex border border-black border-2 p-2" />
+            <div class="flex py-1"></div>
+          </div>
+        </div>
+
+        <!-- Additional text input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 39---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenEpithaph', 'Line 39.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <label for="epitaph" class="flex flex-none py-4">
+              Epitaph:
+            </label>
+          </div>
+          <div class="flex flex-row flex-none">
+            <div class="flex pt-4 px-2">
+              <textarea id="epitaph" name="epitaph" for="epitaph" 
+                rows="4" 
+                cols="20"
+                class="flex border border-black border-2 p-2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Images input -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 40---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenImages', 'Line 40.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <div class="flex flex-none py-4">
+              Engraved Images:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 41---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodenYesOrNo', 'Line 41.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none py-4">
+              <div class="flex flex-row flex-none items-center">
+                <input type="radio" name="engraveImageOption" value="Yes"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Yes</label>
+              </div>
+              <div class="flex flex-row flex-none items-center">
+                <input type="radio" name="engraveImageOption" value="No"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type of wood selection -->
+        <div>
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 42---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodSelection', 'Line 42.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <div class="flex flex-none py-4">
+              Type of Wood:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 43---------------------------------------------------------------->
+            <button onclick="toggleAudio('woodSelectionTypes', 'Line 43.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="woodOption" value="Spruce"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Spruce</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="woodOption" value="Oak"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Oak</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="woodOption" value="Birch"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Birch</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-row flex-none pt-8">
+          <!-----------------------------------Line 44---------------------------------------------------------------->
+          <button onclick="toggleAudio('woodSection', 'Line 44.mp3')"
+            class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                  font-bold p-5 rounded size-50 justify-left self-start">
+            <i class="bi bi-volume-up"></i>
+          </button>
+          <!---------------------------------------------------------------------------------------------------------->
+
+
+          <!-- cross section or plank selection -->
+          <div class="flex flex-none py-4">
+            Wood Shape:
+          </div>
+        </div>
+        <div class="flex flex-row flex-none">
+          <!-----------------------------------Line 45---------------------------------------------------------------->
+          <button onclick="toggleAudio('woodSectionSelection', 'Line 45.mp3')"
+            class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                  font-bold p-5 rounded size-50 justify-left self-start">
+            <i class="bi bi-volume-up"></i>
+          </button>
+          <!---------------------------------------------------------------------------------------------------------->
+
+          <div class="flex flex-col flex-none">
+            <div class="flex flex-row flex-none pt-8 items-center">
+              <input type="radio" name="logOrPlank" value="Log"
+                class="appearance-none border border-8 border-black rounded-md checked:bg-green-500 
+                      h-20 w-20 text-blue-600 focus:outline-none">
+              <label class="flex px-2">Log</label>
+            </div>
+            <div class="flex flex-row flex-none pt-8 items-center">
+              <input type="radio" name="logOrPlank" value="Rectangular"
+                class="appearance-none border border-8 border-black rounded-md checked:bg-green-500 
+                      h-20 w-20 text-blue-600 focus:outline-none">
+              <label class="flex px-2">Rectangular</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <br>
+
+  <!-- This div contains the card and form for the Plant Marker -->
+  <div class="p-4">
+
+    <!-- This div contains the Plant Marker option -->
+    <div id="plantMarkerFormCard" class="bg-zinc-100 flex flex-col border-4 
+            border-black p-4 rounded text-9xl">
+
+      <!-- Title row -->
+      <div class="flex flex-row p-4">
+
+        <!-----------------------------------Line 46---------------------------------------------------------------->
+        <button onclick="toggleAudio('plantMarker', 'Line 46.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                font-bold p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex p-2 text-9xl">Plant Marker</div>
+
+      </div>
+
+      <!-- Description row-->
+      <div class="flex flex-row p-4 text-9xl justify-left items-center">
+
+        <!-----------------------------------Line 47---------------------------------------------------------------->
+        <button onclick="toggleAudio('plantMarkerExplination', 'Line 47.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                p-5 rounded size-50 justify-left">
+          About
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+
+        <div class="flex justify-center items-center flex-grow">
+          <img src="images/plant-marker.jpg" class="border-4 border-black rounded" alt="" width="480px" height="auto">
+        </div>
+
+      </div>
+
+      <!-- Selection button (bottom row) -->
+      <button type="button" id="plantMarkerFormButton" data-default-text="Select Plant Marker"
+        data-selected-text="Plant Marker Selected" 
+        class="flex justify-center bg-blue-500 hover:bg-blue-700 text-white 
+              rounded p-2 justify-center" 
+        onclick="toggleForm('plantMarkerForm')">
+        Select Plant Marker
+      </button>
+
+    </div>
+
+    <br>
+
+    <!--  This div contains the form associated with the plant marker option.
+          This will appear upon selection only -->
+    <div id="plantMarkerForm" class="bg-zinc-100 hidden flex border border-black 
+            border-4 text-9xl p-4 overflow-hidden">
+
+      <div class="flex flex-col flex-none text-pretty">
+
+        <!-- Type of plant selection -->
+        <div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 48---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerType', 'Line 48.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+
+            <div class="flex flex-none py-4">
+              Type of Plant:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 49---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerTypeChoices', 'Line 49.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="plantOption" value="Tree"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none"
+                  onclick="showPlantOptions(this)">
+                <label class="flex px-2">Tree</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="plantOption" value="Bush"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none"
+                  onclick="showPlantOptions(this)">
+                <label class="flex px-2">Bush</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="plantOption" value="Wildflower"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none"
+                  onclick="showPlantOptions(this)">
+                <label class="flex px-2">Wildflowers</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type of tree selection -->
+
+        <div id="treeOptions" class="hidden">
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 50---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerTree', 'Line 50.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-none py-4">
+              Type of tree:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 51---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerTreeType', 'Line 51.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="treeOption" value="Maple"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Maple</label>
+              </div>
+              <div class="flex flex-row flex-none items-center pt-8">
+                <input type="radio" name="treeOption" value="Birch"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Birch</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="treeOption" value="Pine"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Pine</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="treeOption" value="Tamarack"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Tamarack</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type of bush selection -->
+        <div id="bushOptions" class="hidden">
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 52---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerBushType', 'Line 52.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+            <div class="flex flex-none py-4">
+              Type of bush:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 53---------------------------------------------------------------->
+            <button onclick="toggleAudio('plantMarkerBushTypeChoice', 'Line 53.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="bushOption" value="Dogwood"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Dogwood</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="bushOption" value="Honeysuckle"
+                  class="appearance-none border border-8 border-black rounded-md  
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Honeysuckle</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="bushOption" value="Rhodora"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Rhodora</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="bushOption" value="Hydrangea"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Hydrangea</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type of flowers selection -->
+        <div id="flowerOptions" class="hidden">
+          <div class="flex flex-row flex-none pt-8">
+            <!-----------------------------------Line 60---------------------------------------------------------------->
+            <button onclick="toggleAudio('wildFlowerSelection', 'Line 60.mp3')"
+              class="mr-2 mt-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-none py-4">
+              Type of wildflowers:
+            </div>
+          </div>
+          <div class="flex flex-row flex-none">
+            <!-----------------------------------Line 61---------------------------------------------------------------->
+            <button onclick="toggleAudio('wildFlowerSelectionType', 'Line 61.mp3')"
+              class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                    font-bold p-5 rounded size-50 justify-left self-start">
+              <i class="bi bi-volume-up"></i>
+            </button>
+            <!---------------------------------------------------------------------------------------------------------->
+
+            <div class="flex flex-col flex-none">
+              <div class="flex flex-row flex-none pt-8 items-center ">
+                <input type="radio" name="flowerOption" value="Lupines"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Lupines</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="flowerOption" value="Daisies"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Daisies</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="flowerOption" value="Yarrow"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Yarrow</label>
+              </div>
+              <div class="flex flex-row flex-none pt-8 items-center">
+                <input type="radio" name="flowerOption" value="Starflower"
+                  class="appearance-none border border-8 border-black rounded-md 
+                        checked:bg-green-500 h-20 w-20 text-blue-600 focus:outline-none">
+                <label class="flex px-2">Starflower</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <!-- Footer (Charis) -->
+  <!-- End of form -->
+  <div class="p-4">
+    <div class="flex flex-col p-4 text-9xl bg-zinc-100 border-4 border-black p-4 rounded">
+      <div class="flex flex-row p-4">
+
+        <!-----------------------------------Line 62---------------------------------------------------------------->
+        <button onclick="toggleAudio('endOfForm', 'Line 62.mp3')"
+          class="mr-2 flex flex-none p-2 bg-blue-500 hover:bg-blue-700 text-white 
+                font-bold p-5 rounded size-50 justify-left self-start">
+          <i class="bi bi-volume-up"></i>
+        </button>
+        <!---------------------------------------------------------------------------------------------------------->
+        <div class="flex p-2 text-9xl">End of form.</div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Submit button -->
+  <div class="p-8 flex justify-center">
+    <button id="submitButton" type="button" onclick="getFieldInput()"
+      class="bg-green-500 text-white text-9xl py-4 px-5 rounded">
+      Submit Form
+    </button>
+    <p id="jsontext"></p>
+  </div>
+
+</body>
+
+</html>

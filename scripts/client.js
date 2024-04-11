@@ -11,6 +11,9 @@
 // Define the base URL for the server
 const SERVER_URL = "http://ugdev.cs.smu.ca:4200"; // Adjusted port number
 
+// include the function that repopulates the page
+import { retrieveUserData } from './retrieve.js';
+
 /*
   The purpose of this function is to POST a JSON object to the
   server at the relative endpoint /myPost.
@@ -72,7 +75,7 @@ function successGet(userData) {
 
   localStorage.setItem("userData", userData);
 
-  // must call this function that is in retrieve.js: retrieveUserData();
+  retrieveUserData();
 
   console.log(userData);
 }

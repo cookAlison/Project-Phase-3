@@ -82,7 +82,6 @@ server.post("/myPost", function (req, res) {
 */
 server.get("/myGet", function (req, res) {
   try {
-    // Extract user data from the request body
     let userDataFromServer = userData;
 
     // Return the extracted user data as the response

@@ -50,12 +50,11 @@ function retrieveUserData() {
             if (data.wildflowerOption) document.getElementById(data.wildflowerOption).checked = true;
 
         } else {
-            // Display message if no user data found
+            // if no user data found do nothing
             
         }
     } catch (error) {
-        // Display error message to the user
-        //alert("An error occurred: " + error.message);
+        // if there is an error do nothing
     }
 }
 

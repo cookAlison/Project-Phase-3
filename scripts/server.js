@@ -19,13 +19,13 @@ const server = express();
 // set the port where the server listens for clients
 const port = 4200;
 
+let userData = {};
+
 // enable the server to recognize JSON format
 server.use(express.json());
 
 // enable incoming "name":"value" pairs to be any type including arrays
 server.use(express.urlencoded({ extended: true }));
-
-let userData;
 
 /*
   The purpose of this function is to execute the instructions
@@ -68,7 +68,7 @@ server.post("/myPost", function (req, res) {
   // JSON object to be returned
   userData = req.body;
 
-  return res.status(200).send(userData);
+  return res.status(200).send({});
 });
 
 /*

@@ -8,7 +8,7 @@
 // Define the base URL for the server
 const SERVER_URL = "http://ugdev.cs.smu.ca:4200"; // Adjusted port number
 
-let userData;
+
 
 /*
   The purpose of this function is to POST a JSON object to the
@@ -18,7 +18,7 @@ let userData;
 */
 function post() {
   // Retrieve user data
-  userData = localStorage.getItem("userData");
+  let userData = localStorage.getItem("userData");
 
   // attempt to POST userData to endpoint http://ugdev.cs.smu.ca:4200/myPost
   // if (the middleware for this endpoint ran without error)
@@ -66,6 +66,8 @@ function successPost(userData) {
 function successGet(userData) {
 
   localStorage.setItem("userData", userData);
+
+  // must call this function that is in retrieve.js: retrieveUserData();
 
   console.log(userData);
 }

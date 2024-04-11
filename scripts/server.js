@@ -25,6 +25,8 @@ server.use(express.json());
 // enable incoming "name":"value" pairs to be any type including arrays
 server.use(express.urlencoded({ extended: true }));
 
+let userData;
+
 /*
   The purpose of this function is to execute the instructions
   necessary: to allow a request from any origin to access this site's content;
@@ -63,13 +65,9 @@ server.post("/myPost", function (req, res) {
   // log the received user data
   console.log("Received user data:", req.body);
 
-  // define a new JSON object to be returned
-  let userData = {
-    message: "Data received successfully",
-    receivedUserData: req.body // Include the received user data in the response
-  };
+  // JSON object to be returned
+  userData = req.body;
 
-  // respond with the received JSON object
   return res.status(200).send(userData);
 });
 
@@ -85,10 +83,10 @@ server.post("/myPost", function (req, res) {
 server.get("/myGet", function (req, res) {
   try {
     // Extract user data from the request body
-    const userData = req.body;
+    let userDataFromServer = userData;
 
     // Return the extracted user data as the response
-    return res.status(200).send(userData);
+    return res.status(200).send(userDataFromServer);
   } catch (error) {
     // Handle any errors and return an error response
     return res.status(500).send({ error: "Failed to retrieve user data", details: error.message });

@@ -12,7 +12,7 @@
 const SERVER_URL = "http://ugdev.cs.smu.ca:4200"; // Adjusted port number
 
 // include the function that repopulates the page
-import { retrieveUserData } from './retrieve.js';
+// FIXME: this did NOT work to include the function here import { retrieveUserData } from './retrieve.js';
 
 /*
   The purpose of this function is to POST a JSON object to the
@@ -75,7 +75,8 @@ function successGet(userData) {
 
   localStorage.setItem("userData", userData);
 
-  retrieveUserData();
+  // TODO: make this function work here to repopulate the page retrieveUserData();
+  // TODO: if worst comes to worst, just copy the code here
 
   console.log(userData);
 }

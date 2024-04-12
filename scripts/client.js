@@ -12,7 +12,6 @@
 const SERVER_URL = "http://ugdev.cs.smu.ca:4200"; // Adjusted port number
 
 // include the function that repopulates the page
-// FIXME: this did NOT work to include the function here import { retrieveUserData } from './retrieve.js';
 
 /*
   The purpose of this function is to POST a JSON object to the

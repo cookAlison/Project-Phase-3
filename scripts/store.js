@@ -110,6 +110,8 @@ function getFieldInput() {
 
     // Notify user by updating the button to say "Submitted Successfully"
     document.getElementById("submitButton").textContent = "Submitted Successfully";
+    document.getElementById("submitButton").classList.remove("bg-red-500");
+    document.getElementById("submitButton").classList.add("bg-green-500");
 
   } catch (error) {
     // Display error message to the user
